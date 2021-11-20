@@ -1,0 +1,31 @@
+{
+    "name": "Python 3",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        // "context": "..",
+        //Update 'VARIANT' to pick a Python version: 3, 3.6, 3.7, 3.8
+        "args": {
+            "INSTALL_NODE": "false",
+            "NODE_VERSION": "lts/*",
+            "VARIANT": "3.8"
+        }
+    },
+    "remoteUser": "vscode",
+    "runArgs": [
+        "-v",
+        "${localEnv:HOME}/.ssh:/home/vscode/.ssh:ro"
+    ],
+    "settings": {
+        "python.linting.flake8Enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.enabled": true,
+        "python.formatting.provider": "black"
+    },
+    "extensions": [
+        "ms-python.python",
+        "github.vscode-pull-request-github",
+        "davidanson.vscode-markdownlint",
+        "njpwerner.autodocstring",
+        "redhat.vscode-yaml"
+    ],
+}
